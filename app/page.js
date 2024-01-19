@@ -9,11 +9,16 @@ function Home() {
   const [laps, setLaps] = useState([]);
 
   const start = () => {
-    startTime.current = currentTime;
+    startTime.current = Date.now() - currentTime;
     console.log("start button")
     console.log(startTime);
     intervalRef.current = setInterval(() => {
-        setCurrentTime(prevTime => prevTime + 0.01);
+        // setCurrentTime(prevTime => prevTime + 0.010);
+        
+        const time = Date.now() - startTime.current;
+
+        setCurrentTime(time/1000);
+
       }, 10);     
 
       // intervalRef.current = intervalId;
