@@ -61,8 +61,8 @@ function Home() {
       {laps.length != 0 && <section className='lap-section'>
         <h2>Laps</h2>
         <section className='laps'>
-         { laps.map((lap) => {
-            return <p key={lap}>{lap}</p>
+         { laps.map((lap,index) => {
+            return <p key={index}>{lap}</p>
           })}
         </section>
       </section>}
